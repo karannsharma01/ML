@@ -1,0 +1,19 @@
+# loading required modules
+from sklearn import datasets
+from sklearn.neighbors import KNeighborsClassifier
+
+# loading datasets
+iris = datasets.load_iris()
+
+# printing descriptions and features
+# print(iris.DESCR)
+features = iris.data
+labels = iris.target
+print(features[0], labels[0])
+
+# traing the classifier
+clf = KNeighborsClassifier()
+clf.fit(features, labels)
+
+preds = clf.predict([[12,4,6,1]])
+print(preds)
